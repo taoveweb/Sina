@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA55F2191D35AEA200CEEE5C /* WeiboTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F2171D35AEA200CEEE5C /* WeiboTableViewCell.swift */; };
+		DA55F21A1D35AEA200CEEE5C /* WeiboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA55F2181D35AEA200CEEE5C /* WeiboTableViewCell.xib */; };
 		E164D3D61D348BAC00FB88D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164D3D51D348BAC00FB88D0 /* AppDelegate.swift */; };
 		E164D3D81D348BAC00FB88D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164D3D71D348BAC00FB88D0 /* ViewController.swift */; };
 		E164D3DB1D348BAC00FB88D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E164D3D91D348BAC00FB88D0 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA55F2171D35AEA200CEEE5C /* WeiboTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboTableViewCell.swift; sourceTree = "<group>"; };
+		DA55F2181D35AEA200CEEE5C /* WeiboTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiboTableViewCell.xib; sourceTree = "<group>"; };
 		E164D3D21D348BAC00FB88D0 /* sina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E164D3D51D348BAC00FB88D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E164D3D71D348BAC00FB88D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				E164D3DC1D348BAC00FB88D0 /* Assets.xcassets */,
 				E164D3DE1D348BAC00FB88D0 /* LaunchScreen.storyboard */,
 				E164D3E11D348BAC00FB88D0 /* Info.plist */,
+				DA55F2171D35AEA200CEEE5C /* WeiboTableViewCell.swift */,
+				DA55F2181D35AEA200CEEE5C /* WeiboTableViewCell.xib */,
 			);
 			path = sina;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA55F21A1D35AEA200CEEE5C /* WeiboTableViewCell.xib in Resources */,
 				E164D3E01D348BAC00FB88D0 /* LaunchScreen.storyboard in Resources */,
 				E164D3DD1D348BAC00FB88D0 /* Assets.xcassets in Resources */,
 				E164D3DB1D348BAC00FB88D0 /* Main.storyboard in Resources */,
@@ -258,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E164D3D81D348BAC00FB88D0 /* ViewController.swift in Sources */,
+				DA55F2191D35AEA200CEEE5C /* WeiboTableViewCell.swift in Sources */,
 				E164D3D61D348BAC00FB88D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +495,7 @@
 				E164D3FC1D348BAC00FB88D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E164D3FD1D348BAC00FB88D0 /* Build configuration list for PBXNativeTarget "sinaTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +504,7 @@
 				E164D3FF1D348BAC00FB88D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E164D4001D348BAC00FB88D0 /* Build configuration list for PBXNativeTarget "sinaUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +513,7 @@
 				E164D4021D348BAC00FB88D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

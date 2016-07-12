@@ -22,8 +22,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         self.myTableView.delegate=self
         self.myTableView.dataSource=self
+        self.myTableView.rowHeight=440
         
-        self.myTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cellID")
+        
+//        self.myTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cellID")
+        
+        
+        let nib = UINib(nibName: "WeiboTableViewCell", bundle: NSBundle.mainBundle())
+        self.myTableView.registerNib(nib, forCellReuseIdentifier: "cellID")
 
         //表头
         let tableHeader=UILabel(frame: CGRectMake(0,0,self.view.frame.size.width,60))
@@ -51,11 +57,33 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as! WeiboTableViewCell
+        
+//        if cell.textLabel?.text == nil {
+//            let tmpString="初始值"
+//            cell.textLabel?.text=tmpString+"我是第"+String(indexPath.row)+"行"
+//        } else {
+//            let tmpString = cell.textLabel?.text
+//            cell.textLabel?.text = tmpString!+"我是第"+String(indexPath.row)+"行"
+//        }
+//        
+//       
+//        cell.imageView?.image = UIImage(named: "logo 2")
+//        
+//        let tableFotter=UILabel(frame: CGRectMake(0,0,60,60))
+//        tableFotter.text="我"
+//        tableFotter.textAlignment=NSTextAlignment.Center
+//        tableFotter.backgroundColor=UIColor.blueColor()
+//
+//
+//        
+//        cell.accessoryView = tableFotter
+        cell.selectionStyle=UITableViewCellSelectionStyle.None
         
         return cell
     }
     
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
