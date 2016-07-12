@@ -10,9 +10,13 @@ import UIKit
 
 class WeiboTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var HeadImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.HeadImageView.layer.cornerRadius=20
+        self.HeadImageView.layer.masksToBounds=true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
