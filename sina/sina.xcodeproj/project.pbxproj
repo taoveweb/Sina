@@ -16,6 +16,7 @@
 		E164D3E01D348BAC00FB88D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E164D3DE1D348BAC00FB88D0 /* LaunchScreen.storyboard */; };
 		E164D3EB1D348BAC00FB88D0 /* sinaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164D3EA1D348BAC00FB88D0 /* sinaTests.swift */; };
 		E164D3F61D348BAC00FB88D0 /* sinaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164D3F51D348BAC00FB88D0 /* sinaUITests.swift */; };
+		E1B27B741D361808003139BE /* weibo.json in Resources */ = {isa = PBXBuildFile; fileRef = E1B27B731D361808003139BE /* weibo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E164D3F11D348BAC00FB88D0 /* sinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E164D3F51D348BAC00FB88D0 /* sinaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sinaUITests.swift; sourceTree = "<group>"; };
 		E164D3F71D348BAC00FB88D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B27B731D361808003139BE /* weibo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E164D3E11D348BAC00FB88D0 /* Info.plist */,
 				DA55F2171D35AEA200CEEE5C /* WeiboTableViewCell.swift */,
 				DA55F2181D35AEA200CEEE5C /* WeiboTableViewCell.xib */,
+				E1B27B731D361808003139BE /* weibo.json */,
 			);
 			path = sina;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				DA55F21A1D35AEA200CEEE5C /* WeiboTableViewCell.xib in Resources */,
 				E164D3E01D348BAC00FB88D0 /* LaunchScreen.storyboard in Resources */,
 				E164D3DD1D348BAC00FB88D0 /* Assets.xcassets in Resources */,
+				E1B27B741D361808003139BE /* weibo.json in Resources */,
 				E164D3DB1D348BAC00FB88D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

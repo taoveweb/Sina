@@ -23,21 +23,47 @@ class WeiboTableViewCell: UITableViewCell {
     @IBAction func likeAction(sender: UIButton) {
         print("like")
     }
+    @IBOutlet weak var nickeNameLabel: UILabel!
+    
+    @IBOutlet weak var publishTextlabel: UILabel!
+    
+    @IBOutlet weak var sourceLabel: UILabel!
+    
     override func awakeFromNib() {
+        
+      
         super.awakeFromNib()
         // Initialization code
         
         self.HeadImageView.layer.cornerRadius=20
         self.HeadImageView.layer.masksToBounds=true
-        let headerTap=UITapGestureRecognizer(target: self, action: "HeaderTapAction")
+        let headerTap=UITapGestureRecognizer(target: self, action: #selector(WeiboTableViewCell.HeaderTapAction(_:)))
+        self.HeadImageView.userInteractionEnabled=true
+        self.HeadImageView.addGestureRecognizer(headerTap)
+        
+        self.nickeNameLabel.userInteractionEnabled=true
+        self.nickeNameLabel.addGestureRecognizer(headerTap)
+        
+        self.requestData()
     }
     
-    func headerTapAction(
+    func HeaderTapAction(sender:UITapGestureRecognizer){
+        print("点击了用户头像")
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    //网络数数据
+    func requestData(){
+        let path=NSBundle.mainBundle().pathForResource("weibo", ofType: "json")
+        let data=NSData(contentsOfFile: path!)
+        let jsonData=try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+        
+        print(jsonData?.classForCoder)
     }
     
 }
