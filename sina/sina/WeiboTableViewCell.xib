@@ -55,21 +55,39 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Kao-az-FV3"/>
                         </constraints>
-                        <state key="normal" title="转发"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="转发">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="repostAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bWJ-Ps-bHl"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH1-VK-5OY">
                         <rect key="frame" x="211" y="304" width="101" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="bIi-2Z-w06"/>
                         </constraints>
-                        <state key="normal" title="点赞"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="点赞">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="likeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r9b-cR-o3p"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuU-I8-6ll">
                         <rect key="frame" x="109" y="304" width="102" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="fLx-st-eTG"/>
                         </constraints>
-                        <state key="normal" title="评论"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="评论">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="commentAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2Im-wu-SME"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -98,6 +116,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="HeadImageView" destination="NEC-Zj-CCb" id="VBF-Eq-hgO"/>
+                <outlet property="commentButton" destination="HuU-I8-6ll" id="r0O-wF-LmQ"/>
+                <outlet property="likeButton" destination="iH1-VK-5OY" id="vG6-nK-gst"/>
+                <outlet property="reposButton" destination="dNK-sA-GGr" id="GGX-GX-Cpa"/>
             </connections>
             <point key="canvasLocation" x="299" y="310.5"/>
         </tableViewCell>
