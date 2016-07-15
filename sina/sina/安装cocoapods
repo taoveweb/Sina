@@ -1,0 +1,21 @@
+//移除现有ruby默认源
+gem sources --remove https://rubygems.org/
+//使用新的源
+gem sources -a https://ruby.taobao.org/
+//验证新源是否替换成功
+
+gem source -l
+
+//安装cocoaPods
+
+sudo gem install cocoapods
+备注：苹果系统升级osx EL caption 后改为 sudo gem install -n /usr/local/bin/cocoapods
+
+pod setup
+
+
+
+更新pod源
+pod repo remove master
+pod repo add master https://gitcafe.com/lloydsheng/Specs.git
+pod repo update

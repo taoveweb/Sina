@@ -44,7 +44,7 @@ class WeiboTableViewCell: UITableViewCell {
         self.nickeNameLabel.userInteractionEnabled=true
         self.nickeNameLabel.addGestureRecognizer(headerTap)
         
-        self.requestData()
+        
     }
     
     func HeaderTapAction(sender:UITapGestureRecognizer){
@@ -57,13 +57,5 @@ class WeiboTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    //网络数数据
-    func requestData(){
-        let path=NSBundle.mainBundle().pathForResource("weibo", ofType: "json")
-        let data=NSData(contentsOfFile: path!)
-        let jsonData=try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-        
-        print(jsonData?.classForCoder)
-    }
-    
+      
 }

@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var  myTableView:UITableView!
-
+    var dataSource = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,41 +46,48 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableFotter.backgroundColor=UIColor.blueColor()
         self.myTableView.tableFooterView=tableFotter
         
-        //表示图分区
-        
+        //网络数数据
+       
+        self.requestData()
 
     }
+    //网络数数据
+    func requestData(){
+        let path=NSBundle.mainBundle().pathForResource("weibo", ofType: "json")
+        let data=NSData(contentsOfFile: path!)
+        let jsonData = try? NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+        
+       
+        let arrayb =  jsonData?.objectForKey("statuese") as! NSArray
+       
+        dataSource.addObjectsFromArray(arrayb as [AnyObject])
+
+    }
+
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dataSource.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
+        let element = dataSource[indexPath.row] as! NSDictionary
+        //昵称
+        let userNic = element["user"] as! NSDictionary
+        let nickname = userNic["name"] as! String
+        //时间
+        let create_at=element["created_at"] as! String
+        //处理html
+        let source = element["source"] as! String
+        let text = element["text"] as! String
+ 
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as! WeiboTableViewCell
-        
-//        if cell.textLabel?.text == nil {
-//            let tmpString="初始值"
-//            cell.textLabel?.text=tmpString+"我是第"+String(indexPath.row)+"行"
-//        } else {
-//            let tmpString = cell.textLabel?.text
-//            cell.textLabel?.text = tmpString!+"我是第"+String(indexPath.row)+"行"
-//        }
-//        
-//       
-//        cell.imageView?.image = UIImage(named: "logo 2")
-//        
-//        let tableFotter=UILabel(frame: CGRectMake(0,0,60,60))
-//        tableFotter.text="我"
-//        tableFotter.textAlignment=NSTextAlignment.Center
-//        tableFotter.backgroundColor=UIColor.blueColor()
-//
-//
-//        
-//        cell.accessoryView = tableFotter
+
         cell.selectionStyle=UITableViewCellSelectionStyle.None
-        
+        cell.nickeNameLabel.text=nickname
+        cell.sourceLabel.text=create_at+"来自"+source
+        cell.publishTextlabel.text=text
         return cell
     }
     
