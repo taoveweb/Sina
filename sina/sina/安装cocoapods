@@ -11,6 +11,14 @@ gem source -l
 sudo gem install cocoapods
 备注：苹果系统升级osx EL caption 后改为 sudo gem install -n /usr/local/bin/cocoapods
 
+设置燃灯代理要不都安装不成功
+在控制台输入
+export http_proxy=http://127.0.0.1:8787
+export https_proxy=http://127.0.0.1:8787
+然后在终端就可以翻墙了
+用curl www.google.com 来测试是否成功
+
+
 pod setup
 
 

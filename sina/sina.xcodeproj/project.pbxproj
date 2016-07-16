@@ -12,6 +12,7 @@
 		50782B91DE61AEE01B060BDD /* Pods_sina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF70F3296458701E8CC1BEE6 /* Pods_sina.framework */; };
 		DA55F2191D35AEA200CEEE5C /* WeiboTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55F2171D35AEA200CEEE5C /* WeiboTableViewCell.swift */; };
 		DA55F21A1D35AEA200CEEE5C /* WeiboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA55F2181D35AEA200CEEE5C /* WeiboTableViewCell.xib */; };
+		DAACB1D21D3A33EA0049D522 /* WBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAACB1D11D3A33EA0049D522 /* WBHelper.swift */; };
 		E10F86651D3884970003162F /* 安装cocoapods in Resources */ = {isa = PBXBuildFile; fileRef = E10F86641D3884970003162F /* 安装cocoapods */; };
 		E164D3D61D348BAC00FB88D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164D3D51D348BAC00FB88D0 /* AppDelegate.swift */; };
 		E164D3D81D348BAC00FB88D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164D3D71D348BAC00FB88D0 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		CF70F3296458701E8CC1BEE6 /* Pods_sina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA55F2171D35AEA200CEEE5C /* WeiboTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboTableViewCell.swift; sourceTree = "<group>"; };
 		DA55F2181D35AEA200CEEE5C /* WeiboTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiboTableViewCell.xib; sourceTree = "<group>"; };
+		DAACB1D11D3A33EA0049D522 /* WBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHelper.swift; sourceTree = "<group>"; };
 		E10F86641D3884970003162F /* 安装cocoapods */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "安装cocoapods"; sourceTree = "<group>"; };
 		E164D3D21D348BAC00FB88D0 /* sina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E164D3D51D348BAC00FB88D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DAACB1D01D3A33AB0049D522 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DAACB1D11D3A33EA0049D522 /* WBHelper.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		E164D3C91D348BAC00FB88D0 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		E164D3D41D348BAC00FB88D0 /* sina */ = {
 			isa = PBXGroup;
 			children = (
+				DAACB1D01D3A33AB0049D522 /* Utility */,
 				E1B27B731D361808003139BE /* weibo.json */,
 				E164D3D51D348BAC00FB88D0 /* AppDelegate.swift */,
 				E164D3D71D348BAC00FB88D0 /* ViewController.swift */,
@@ -445,6 +456,7 @@
 			files = (
 				E164D3D81D348BAC00FB88D0 /* ViewController.swift in Sources */,
 				DA55F2191D35AEA200CEEE5C /* WeiboTableViewCell.swift in Sources */,
+				DAACB1D21D3A33EA0049D522 /* WBHelper.swift in Sources */,
 				E164D3D61D348BAC00FB88D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -576,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -590,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = sina/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taove.sina;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -604,7 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = sina/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taove.sina;
 				PRODUCT_NAME = "$(TARGET_NAME)";

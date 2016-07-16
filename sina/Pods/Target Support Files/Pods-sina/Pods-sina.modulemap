@@ -1,0 +1,6 @@
+framework module Pods_sina {
+  umbrella header "Pods-sina-umbrella.h"
+
+  export *
+  module * { export * }
+}

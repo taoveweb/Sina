@@ -1,0 +1,6 @@
+framework module Pods_sinaTests {
+  umbrella header "Pods-sinaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

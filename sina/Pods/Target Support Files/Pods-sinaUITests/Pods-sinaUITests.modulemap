@@ -1,0 +1,6 @@
+framework module Pods_sinaUITests {
+  umbrella header "Pods-sinaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
