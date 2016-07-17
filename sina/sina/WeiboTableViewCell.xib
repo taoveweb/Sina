@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="342"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo 2" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Zj-CCb">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="http://img4.imgtn.bdimg.com/it/u=4059898716,4024040984&amp;fm=23&amp;gp=0.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Zj-CCb">
                         <rect key="frame" x="8" y="8" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="PUV-Li-MEA"/>
@@ -127,6 +127,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="logo 2" width="231" height="231"/>
+        <image name="http://img4.imgtn.bdimg.com/it/u=4059898716,4024040984&amp;fm=23&amp;gp=0.jpg" width="231" height="231"/>
     </resources>
 </document>

@@ -17,7 +17,8 @@
                 "in_replay_to_user_id":"",
                 "in_replay_to_screen_name":"",
                 "user":{
-                "name":"你是一个三不泡1"
+                "name":"你是一个三不泡1",
+                "avatar_hd":"http://tva1.sinaimg.cn/crop.0.0.1080.1080.50/e8a2bd93jw8edgwh1s0thj20u00u0406.jpg"
                 },
                 "pic_urls":[]
                 }
@@ -38,7 +39,8 @@
                 "in_replay_to_user_id":"",
                 "in_replay_to_screen_name":"",
                 "user":{
-                    "name":"你是一个三不泡2"
+                "name":"你是一个三不泡2",
+                "avatar_hd":"http://tva4.sinaimg.cn/crop.0.0.852.852.50/005YcH2jjw8ez3ppshxprj30no0npgnf.jpg"
                 },
                 "pic_urls":[]
                 }
@@ -58,7 +60,8 @@
                 "in_replay_to_user_id":"",
                 "in_replay_to_screen_name":"",
                 "user":{
-                "name":"你是一个三不泡3"
+                "name":"你是一个三不泡3",
+                "avatar_hd":"http://tva2.sinaimg.cn/crop.0.0.200.200.50/70644d14jw1f3t5xuv7oyj205k05kjrd.jpg"
                 },
                 "pic_urls":[]
                 }
@@ -78,7 +81,8 @@
                 "in_replay_to_user_id":"",
                 "in_replay_to_screen_name":"",
                 "user":{
-                "name":"4你是一个三不泡"
+                "name":"4你是一个三不泡",
+                "avatar_hd":"http://tva3.sinaimg.cn/crop.9.0.165.165.50/dc4f105ejw8f4yglm4m7qj2050050glj.jpg"
                 },
                 "pic_urls":[]
                 }

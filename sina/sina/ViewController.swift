@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var  myTableView:UITableView!
     var dataSource = NSMutableArray()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,19 +77,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let element = dataSource[indexPath.row] as! NSDictionary
         //昵称
         let userNic = element["user"] as! NSDictionary
+        
         let nickname = userNic["name"] as! String
+
         //时间
         let create_at=element["created_at"] as! String
         //处理html
         let source = element["source"] as! String
         let text = element["text"] as! String
- 
+        let avatal_url=userNic["avatar_hd"] as! String
+        let header_url=NSURL(string: avatal_url)
+   
+print(avatal_url)
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as! WeiboTableViewCell
 
         cell.selectionStyle=UITableViewCellSelectionStyle.None
         cell.nickeNameLabel.text=nickname
         cell.sourceLabel.text=create_at+"来自"+source
         cell.publishTextlabel.text=text
+        cell.HeadImageView.sd_setImageWithURL(header_url)
         return cell
     }
     
