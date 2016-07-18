@@ -74,6 +74,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        print(NSDate())
+        
         let element = dataSource[indexPath.row] as! NSDictionary
         //昵称
         let userNic = element["user"] as! NSDictionary
@@ -81,7 +83,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let nickname = userNic["name"] as! String
 
         //时间
-        let create_at=element["created_at"] as! String
+        let create_at = WBHelper.timeLineWidthStringData( element["created_at"] as? String) 
         //处理html
         let source = element["source"] as! String
         let text = element["text"] as! String
@@ -94,7 +96,7 @@ print(avatal_url)
 
         cell.selectionStyle=UITableViewCellSelectionStyle.None
         cell.nickeNameLabel.text=nickname
-        cell.sourceLabel.text=create_at+"来自"+source
+        cell.sourceLabel.text=create_at!+"来自"+source
         cell.publishTextlabel.text=text
         cell.HeadImageView.sd_setImageWithURL(header_url)
         return cell

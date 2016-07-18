@@ -15,13 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="342"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="http://img4.imgtn.bdimg.com/it/u=4059898716,4024040984&amp;fm=23&amp;gp=0.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Zj-CCb">
-                        <rect key="frame" x="8" y="8" width="40" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="PUV-Li-MEA"/>
-                            <constraint firstAttribute="height" constant="40" id="ZFJ-2u-DVR"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vicent_God_Love" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="381-FD-3TJ">
                         <rect key="frame" x="56" y="8" width="117" height="21"/>
                         <constraints>
@@ -89,6 +82,13 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Zj-CCb">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="PUV-Li-MEA"/>
+                            <constraint firstAttribute="height" constant="40" id="ZFJ-2u-DVR"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="HuU-I8-6ll" firstAttribute="width" secondItem="dNK-sA-GGr" secondAttribute="width" id="0NF-Do-ky7"/>
@@ -126,7 +126,4 @@
             <point key="canvasLocation" x="299" y="310.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="http://img4.imgtn.bdimg.com/it/u=4059898716,4024040984&amp;fm=23&amp;gp=0.jpg" width="231" height="231"/>
-    </resources>
 </document>
