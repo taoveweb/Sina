@@ -85,7 +85,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //时间
         let create_at = WBHelper.timeLineWidthStringData( element["created_at"] as? String) 
         //处理html
-        let source = element["source"] as! String
+        let source = WBHelper.soureceText(element["source"] as! String)
+        print(WBHelper.soureceHref(element["source"] as! String))
         let text = element["text"] as! String
         let avatal_url=userNic["avatar_hd"] as! String
         let header_url=NSURL(string: avatal_url)

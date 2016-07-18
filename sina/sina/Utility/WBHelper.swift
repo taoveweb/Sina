@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+var textRegex:NSRegularExpression?
+var hrefRegex:NSRegularExpression?
 class WBHelper: NSObject {
-    
+   
     class func timeLineWidthStringData(dataString:String?) -> String?{
         /*
          
@@ -63,5 +64,65 @@ class WBHelper: NSObject {
         let year = NSCalendar.currentCalendar().component(.Year, fromDate: date!)
         let now = NSCalendar.currentCalendar().component(.Year, fromDate: NSDate())
         return year == now
+    }
+    
+    class func sourceTextRegex() -> NSRegularExpression? {
+        if textRegex == nil {
+            do{
+                let regex = "(?<=>).+(?=<)"
+                try textRegex = NSRegularExpression(pattern: regex, options: .AllowCommentsAndWhitespace)
+            }catch{
+                
+            }
+            
+           
+        }
+         return textRegex
+    }
+    
+    
+    class func sourceHrefRegex() -> NSRegularExpression? {
+        if hrefRegex == nil {
+            do{
+                let regex = "(?<=href=\").+(?=\"\\s)"
+                try hrefRegex = NSRegularExpression(pattern: regex, options: .AllowCommentsAndWhitespace)
+            }catch{
+                
+            }
+            
+            
+        }
+        return hrefRegex
+    }
+    
+    class func soureceText(htmlString:String) -> String {
+        var text:String?
+        WBHelper.sourceTextRegex()
+        let opt = NSMatchingOptions.init(rawValue: 0)
+        let range = NSMakeRange(0, htmlString.startIndex.distanceTo(htmlString.endIndex))
+        let result = textRegex?.firstMatchInString(htmlString, options: opt, range: range)
+        
+        if result != nil && result?.range.location != NSNotFound {
+            let textRange = Range(start: htmlString.startIndex.advancedBy((result?.range.location)!), end: htmlString.startIndex.advancedBy((result?.range.location)! + (result?.range.length)!))
+            
+            text = htmlString.substringWithRange(textRange)
+        }
+        return text!
+    }
+    
+    
+    class func soureceHref(htmlString:String) -> String {
+        var text:String?
+        WBHelper.sourceHrefRegex()
+        let opt = NSMatchingOptions.init(rawValue: 0)
+        let range = NSMakeRange(0, htmlString.startIndex.distanceTo(htmlString.endIndex))
+        let result = hrefRegex?.firstMatchInString(htmlString, options: opt, range: range)
+        
+        if result != nil && result?.range.location != NSNotFound {
+            let textRange = Range(start: htmlString.startIndex.advancedBy((result?.range.location)!), end: htmlString.startIndex.advancedBy((result?.range.location)! + (result?.range.length)!))
+            
+            text = htmlString.substringWithRange(textRange)
+        }
+        return text!
     }
 }
