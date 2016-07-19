@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+protocol WeiboTableViewCellDelegate {
+    func touchSourceLable(cell:WeiboTableViewCell,sourceLabel:UILabel,location:CGPoint,indexPath:NSIndexPath)
+}
 class WeiboTableViewCell: UITableViewCell {
-
+    var delegate:WeiboTableViewCellDelegate?
+    var indexPath:NSIndexPath?
     @IBOutlet weak var HeadImageView: UIImageView!
     @IBOutlet weak var reposButton: UIButton!
     @IBAction func repostAction(sender: UIButton) {
@@ -44,11 +47,28 @@ class WeiboTableViewCell: UITableViewCell {
         self.nickeNameLabel.userInteractionEnabled=true
         self.nickeNameLabel.addGestureRecognizer(headerTap)
         
+        let sourceTayp = UITapGestureRecognizer(target: self, action: #selector(WeiboTableViewCell.sourceTapAction(_:)))
         
+       
+        self.sourceLabel.userInteractionEnabled = true
+        self.sourceLabel.addGestureRecognizer(sourceTayp)
+        
+        
+        
+    }
+    
+    func sourceTapAction (sender:UITapGestureRecognizer){
+        print("点击了发布来源")
+        
+        if self.delegate != nil {
+            let location =  sender.locationInView(sender.view)
+            self.delegate?.touchSourceLable(self, sourceLabel: self.sourceLabel, location: location,indexPath: indexPath!)
+        }
     }
     
     func HeaderTapAction(sender:UITapGestureRecognizer){
         print("点击了用户头像")
+      
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

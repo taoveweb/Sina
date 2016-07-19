@@ -125,4 +125,17 @@ class WBHelper: NSObject {
         }
         return text!
     }
+    
+    
+    class func calculateAttributeTextSize(attributeStr:NSMutableAttributedString) -> CGSize {
+        let frameSetterRef = CTFramesetterCreateWithAttributedString(attributeStr)
+        let cfRange  = CFRangeMake(0, 0)
+        let maxSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, CGFloat.max)
+        let size = CTFramesetterSuggestFrameSizeWithConstraints(frameSetterRef, cfRange, nil, maxSize, nil)
+        return size
+    }
+    
+    
+    
+    
 }

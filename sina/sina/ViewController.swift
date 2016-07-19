@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,WeiboTableViewCellDelegate {
     
     var  myTableView:UITableView!
     var dataSource = NSMutableArray()
@@ -111,7 +111,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as! WeiboTableViewCell
-
+        cell.delegate = self
+        cell.indexPath = indexPath
         cell.selectionStyle=UITableViewCellSelectionStyle.None
         cell.nickeNameLabel.text=nickname
         cell.sourceLabel.attributedText=sourceText
@@ -120,6 +121,29 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
     
+    
+    func touchSourceLable(cell: WeiboTableViewCell, sourceLabel: UILabel, location: CGPoint,indexPath:NSIndexPath) {
+        print("location:\(location)")
+        
+         print("点击了:\(cell.indexPath?.row)")
+        
+         let element = dataSource[indexPath.row] as! NSDictionary
+         let source = WBHelper.soureceText(element["source"] as! String)
+        
+        let a = [NSFontAttributeName:UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.blueColor()]
+        
+        let atimeText = NSMutableAttributedString(string: source, attributes: a)
+        
+        let sourceSize = WBHelper.calculateAttributeTextSize(atimeText)
+        let totalSize = WBHelper.calculateAttributeTextSize(NSMutableAttributedString(attributedString: sourceLabel.attributedText!))
+        
+        if totalSize.width - sourceSize.width <= location.x {
+            
+            let href = WBHelper.soureceHref(element["source"] as! String)
+            print(href)
+        }
+
+    }
   
 
     override func didReceiveMemoryWarning() {
