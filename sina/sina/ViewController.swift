@@ -74,7 +74,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        print(NSDate())
         
         let element = dataSource[indexPath.row] as! NSDictionary
         //昵称
@@ -83,21 +82,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let nickname = userNic["name"] as! String
 
         //时间
-        let create_at = WBHelper.timeLineWidthStringData( element["created_at"] as? String) 
+        let create_at = WBHelper.timeLineWidthStringData( element["created_at"] as? String)
+        let sourceText = NSMutableAttributedString()
+        if let _ = create_at {
+            let dic = [NSFontAttributeName:UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.orangeColor()]
+            
+            let timeText = NSMutableAttributedString(string: create_at!, attributes: dic)
+            sourceText.appendAttributedString(timeText)
+        }
         //处理html
         let source = WBHelper.soureceText(element["source"] as! String)
-        print(WBHelper.soureceHref(element["source"] as! String))
         let text = element["text"] as! String
         let avatal_url=userNic["avatar_hd"] as! String
         let header_url=NSURL(string: avatal_url)
-   
-print(avatal_url)
+        
+        //来自
+        let dic = [NSFontAttributeName:UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.lightGrayColor()]
+        
+        let fromText = NSMutableAttributedString(string: " 来自", attributes: dic)
+        sourceText.appendAttributedString(fromText)
+
+        
+
+            let a = [NSFontAttributeName:UIFont.systemFontOfSize(10),NSForegroundColorAttributeName:UIColor.blueColor()]
+
+            let atimeText = NSMutableAttributedString(string: source, attributes: a)
+            sourceText.appendAttributedString(atimeText)
+    
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as! WeiboTableViewCell
 
         cell.selectionStyle=UITableViewCellSelectionStyle.None
         cell.nickeNameLabel.text=nickname
-        cell.sourceLabel.text=create_at!+"来自"+source
+        cell.sourceLabel.attributedText=sourceText
         cell.publishTextlabel.text=text
         cell.HeadImageView.sd_setImageWithURL(header_url)
         return cell
